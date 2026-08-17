@@ -69,9 +69,9 @@ func helmFuncMap() template.FuncMap {
 	// Helmfile-specific functions not in Helm/sprig
 	helmfileExtras := []string{
 		"env", "requiredEnv", "exec", "envExec",
-		"readFile", "readDir", "readDirEntries",
-		"getOrNil", "setValueAtPath",
-		"fetchSecretValue", "expandSecretRefs", "kustomizeBuild",
+		"isFile", "isDir", "readFile", "readDir", "readDirEntries",
+		"getOrNil", "setValueAtPath", "sprigGet",
+		"fetchSecretValue", "expandSecretRefs",
 	}
 	for _, name := range helmfileExtras {
 		f[name] = stub
